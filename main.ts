@@ -1,8 +1,15 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Ihor Chernyshev
+ * Created on: Sep 2023
+ * This program shows temperature of MicroBit processor in Kelvin 
 */
 
-basic.showString('Hello, World!')
+let temperature = 0
+basic.clearScreen()
+basic.showIcon(IconNames.Happy)
+
+input.onButtonPressed(Button.A, function () {
+  temperature = input.temperature()
+  basic.showString('The temperature is:' + (temperature + + 273.15).toString() + 'K')
+})
