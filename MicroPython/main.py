@@ -5,6 +5,14 @@ This module is a Micro:bit MicroPython program
 """
 
 from microbit import *
+import math
 
+display.clear()
+display.show(Image.HAPPY)
 
-display.scroll("Hello, World!")
+while True:
+    if button_a.is_pressed():
+        temperature = temperature()
+        temperature = temperature + 273.15
+        temperature = math.round(temperature)
+        display.show(str(temperature))
